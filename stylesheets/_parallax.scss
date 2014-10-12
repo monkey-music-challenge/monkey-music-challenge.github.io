@@ -1,0 +1,47 @@
+// Parallax effect
+
+body {
+  perspective: 1px;
+}
+
+.parallax {
+  perspective: 1px;
+  position: relative;
+  height: 600px;
+  // overflow-y: auto;
+  overflow: hidden;
+}
+
+.parallax__layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  background-position: center bottom;
+  background-size: 3000px 600px;
+  background-repeat: no-repeat;
+
+  &.layer1 {
+    transform: translateZ(0);
+    background-image: url('../images/ground1.svg');
+    background-position-y: 110px;
+  }
+
+  &.layer2 {
+    transform: translateZ(-1px) scale(2);
+    background-image: url('../images/ground2.svg');
+    background-position-y: 120px;
+  }
+
+  &.layer3 {
+    transform: translateZ(-2px) scale(3);
+    background-image: url('../images/ground3.svg');
+  }
+
+  &.layer4 {
+    transform: translateZ(-3px) scale(4);
+    background-image: url('../images/ground4.svg');
+  }
+}

@@ -41,6 +41,7 @@
 
 $green-dark:      #3F7812;
 $green:           #86C435;
+$green-light:     #BACE49;
 $light:           #D8FCAD;
 $orange:          #E19924;
 $beige:           #FDFDE6;
@@ -60,8 +61,66 @@ html {
   -webkit-font-smoothing: antialiased;
 }
 
+[role="banner"] {
+
+  .logo {
+    text-align: center;
+    position: relative;
+    top: $lineheight*1.5;
+    width: 100%;
+    font-size: .5rem;
+    z-index: 100;
+  }
+
+  .spotify-logo {
+    opacity: .8;
+    transition: opacity .3s ease-out;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  .presents {
+    color: rgba($brown, .7);
+    font-size: to_rem(13);
+  }
+
+  h1 {
+    color: $green-dark;
+    margin-top: $lineheight;
+    font-weight: bold;
+    line-height: 1.2;
+    font-size: 6em;
+
+    .first-row,
+    .second-row,
+    .third-row {
+      display: block;
+    }
+
+    .first-row {
+      color: $green-light;
+      font-size: 1em;
+      transform: rotate(1deg);
+    }
+    .second-row {
+      font-size: 1.6em;
+      transform: rotate(-2deg);
+    }
+    .third-row {
+      color: $orange;
+      font-size: 3.5em;
+      position: relative;
+      top: -.2em;
+      transform: rotate(4deg);
+    }
+  }
+}
 
 [role="main"] {
+  position: relative;
+  z-index: 110;
   background-color: $green-dark;
   padding: $lineheight 0;
 
@@ -313,3 +372,5 @@ h2 {
 .content--centered {
   text-align: center;
 }
+
+@import "parallax";
