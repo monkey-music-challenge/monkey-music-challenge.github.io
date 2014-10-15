@@ -65,7 +65,6 @@ html {
 
   .logo {
     text-align: center;
-    position: relative;
     top: $lineheight*1.5;
     width: 100%;
     font-size: .5rem;
@@ -132,6 +131,9 @@ html {
 [role="contentinfo"] {
   padding: $lineheight*2 0;
   color: $brown;
+  background-color: $beige;
+  position: relative;
+  z-index: 200;
 
   h1 {
     color: $brown;
