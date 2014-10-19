@@ -214,6 +214,10 @@ p > strong {
   color: lighten($light, 10%);
 }
 
+del {
+  color: rgba($light, .5);
+}
+
 .dates {
   display: table;
   width: 100%;
