@@ -41,3 +41,9 @@
     background-image: url('../images/ground4.svg');
   }
 }
+
+body.touch {
+  .parallax__layer {
+    position: absolute;
+  }
+}

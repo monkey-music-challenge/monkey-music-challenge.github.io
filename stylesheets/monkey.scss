@@ -42,6 +42,11 @@ ol, ul {
   box-sizing: border-box;
 }
 
+@mixin respond($size) {
+  @media only screen and (max-width: $size) {
+    @content;
+  }
+}
 
 // Variables
 
@@ -61,11 +66,18 @@ $base-size:       18;
 $font-size:       to_rem($base-size, 16);
 $lineheight:      to_rem(1.5 * $base-size);
 
+$mobile:          480px;
+$tablet:          768px;
+
 html {
   background-color: $beige;
   color: $light;
   font: #{$font-size}/1.5 $sans;
   -webkit-font-smoothing: antialiased;
+
+  @include respond($mobile) {
+    font-size: to_rem(15);
+  }
 }
 
 [role="banner"] {
@@ -130,8 +142,20 @@ html {
   background-color: $green-dark;
   padding: $lineheight 0;
 
+  @include respond($tablet) {
+    .text-content p {
+      text-align: left;
+    }
+  }
+
   .main-title {
     white-space: nowrap;
+    margin-left: -90px;
+
+    @include respond(925px) {
+      white-space: normal;
+      margin-left: 0;
+    }
   }
 
   .container > section {
@@ -286,6 +310,12 @@ del {
   margin-left: -2rem;
   width: calc(100% + 4rem);
   font-size: 1.2rem;
+
+  @include respond($mobile) {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
   p {
     width: 50%;

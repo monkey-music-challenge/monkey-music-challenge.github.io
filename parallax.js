@@ -63,7 +63,11 @@ var initParallax = function() {
 
 var init = function(){
   if(!isTouch()) {
+    document.body.classList.add('no-touch');
     initParallax()
+  }
+  else {
+    document.body.classList.add('touch');
   }
 
 }
