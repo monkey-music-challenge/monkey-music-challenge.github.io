@@ -130,6 +130,10 @@ html {
   background-color: $green-dark;
   padding: $lineheight 0;
 
+  .main-title {
+    white-space: nowrap;
+  }
+
   .container > section {
     margin: $lineheight*2 0;
   }
