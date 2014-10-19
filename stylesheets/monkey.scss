@@ -210,6 +210,9 @@ h2 {
   font-weight: bold;
 }
 
+p > strong {
+  color: lighten($light, 10%);
+}
 
 .dates {
   display: table;

@@ -1,11 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html prefix="og: http://ogp.me/ns#" itemtype="http://schema.org/Event" itemscope>
   <head>
-    <title>Monkey Music Challenge 2 by Spotify</title>
     <meta charset="utf-8" />
+    <title>Monkey Music Challenge 2 by Spotify</title>
+
+    <!-- Open Graph -->
+    <meta name="og:title" itemprop="name" content="Monkey Music Challenge 2 by Spotify">
+    <meta name="og:type" content="website">
+    <meta name="og:url" itemprop="url" content="http://monkeymusicchallenge.com">
+    <meta name="og:image" content="">
+    <meta name="og:description" content="Monkey Music Challenge is a programming challenge for Chalmers and GU students who love to code. The challenge consists of constructing your own AI. The AI's main tasks are pathfinding and simple decision making." />
 
     <meta name="author" content="Spotify" />
-    <meta name="description" content="Monkey Music Challenge 2 is a competition in algorithms" />
+    <meta name="description" content="Monkey Music Challenge is a programming challenge for Chalmers and GU students who love to code. The challenge consists of constructing your own AI. The AI's main tasks are pathfinding and simple decision making." />
+
     <meta name="keywords" content="spotify, algorithms, pathfinding, music, student, code, programming" />
 
     <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css' />
@@ -24,7 +32,7 @@
           <a class="spotify-logo" href="http://spotify.com"><img src="images/spotify.svg" width="133" height="40" alt="Spotify" /></a>
           <p class="presents">presents</p>
 
-          <h1>
+          <h1 itemprop="summary">
             <span class="first-row">Monkey Music</span>
             <span class="second-row">Challenge</span>
             <span class="third-row">2</span>
@@ -37,30 +45,47 @@
 
     <main role="main" class="content--centered">
       <div class="container">
-        <h1>Heading goes here</h1>
+        <h1>Delve inside the jungle of algorithms …</h1>
 
-        <p>
-          One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections.
+        <p>Monkey Music Challenge is a programming challenge for <strong>Chalmers and GU students</strong> who love to code. The challenge consists of <strong>constructing your own AI</strong>. The AI's main tasks are <strong>pathfinding</strong> and simple <strong>decision making</strong>.
         </p>
 
+        <h2>The event(s)</h2>
+
+        <p>
+          The challenge is split into two separate events. <strong>Wait what?</strong> Yeh, we figured not all of us crank out our best code during hackathons. We believe many of us work better after having a few nights of digesting a problem!
+        </p>
+        <p>
+          So we'll have two different events. The first event will introduce the challenge and the engine that you will communicate with during the challenge. The second event will be split into two parts, a morning where you get to finish your AI at our office. And an afternoon with <del>presentations</del> AI battles!
+        </p>
 
         <div class="dates">
           <p>
             <strong>1st event</strong>
-            <time datetime="2014-11-29">November 29th</time>
+            <time datetime="2014-11-29" itemprop="startDate">November 29th</time>
           </p>
           <p>
             <strong>2nd event</strong>
-            <time datetime="2014-12-07">December 7th</time>
+            <time datetime="2014-12-07" itemprop="endDate">December 7th</time>
           </p>
         </div>
 
-        <div class="signup">
+        <div class="signup" itemprop="location" itemtype="http://schema.org/Place" itemscope>
+          <p>
+            The events will take place at the
+          </p>
+          <p>
+            <a itemprop="url" href="https://www.google.se/maps/place/Vallgatan+22,+411+16+G%C3%B6teborg/@57.7038189,11.9657855,17z/data=!3m1!4b1!4m2!3m1!1s0x464ff365f08b047d:0x47a6d8a7c5385e62?hl=en"><span itemprop="name">Spotify office</span></a><br />
+            <span itemprop="address" itemtype="http://schema.org/PostalAddress" itemscope>
+              <span itemprop="streetAddress">Vallgatan 22</span>, <span itemprop="addressLocality">Gothenburg</span>
+            </span>
+          </p>
+
           <p>
             <a href="#" class="btn"><i class="icon-leaf"></i> Sign up</a>
           </p>
           <p>
-            <a href="#" class="facebook-link no-underline">
+            <a itemprop="sameAs" href="https://www.facebook.com/events/1551306571766171/" class="facebook-link no-underline">
               <img src="images/facebook.svg" alt="Facebook" />
               <strong>Facebook event</strong>
               <small>For news and updates</small>
@@ -125,7 +150,7 @@
           Event details, technicalities, questions ...
         </p>
 
-        <a class="email no-underline" href="mailto:monkeymusicchallenge@spotify.com">monkeymusicchallenge@spotify.com</a>
+        <a class="email no-underline" href="mailto:mmc@spotify.com">mmc@spotify.com</a>
 
         <p>
           <small>Made by all the love in the world by Poscar, Anton &amp; Johan</small>
