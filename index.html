@@ -11,7 +11,7 @@
     <meta name="og:title" itemprop="name" content="Monkey Music Challenge 2 by Spotify">
     <meta name="og:type" content="website">
     <meta name="og:url" itemprop="url" content="http://monkeymusicchallenge.com">
-    <meta name="og:image" content="/images/og-image.png">
+    <meta name="og:image" content="/images/monkey.png">
     <meta name="og:description" content="Monkey Music Challenge is a programming challenge for Chalmers and GU students who love to code. The challenge consists of constructing your own AI. The AI's main tasks are pathfinding and simple decision making." />
 
     <meta name="author" content="Spotify" />
@@ -105,32 +105,37 @@
           <h1>Getting started</h1>
 
           <p>
-            Text om hur man får förtur. One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his.
+            So you've signed up – now what? You can and should start preparing by taking the warm up test to test your skills and get a hang of the concept. Read more technical details under "Tech Info" below.
           </p>
 
           <ol class="steps">
             <li>
               <h2><a href="http://warmup.monkeymusicchallenge.com">Take the warmup test</a></h2>
               <p>
-                Random kort info.
+                The warmup is kind of a single player version of the real version (you only control one monkey). By doing the warmup well, you'll be prepared for the real deal later!
               </p>
             </li>
 
             <li>
-              <h2><a href="#">Start studying the sample code</a></h2>
+              <h2><a href="#">Start studying the starter code</a></h2>
               <p>
-                We’ve created sample code for the most common languages.
+                We’ve created startkits for the most common languages. These starters will help you get up and running writing the actual logic instead of going through the initial hassle of setting up the communication with our server with <code>POST</code> requests.
               </p>
 
               <ul class="languages">
                 <li>
-                  <a href="#" class="no-underline">
+                  <a title="Javascript" href="http://github.com/monkeymusicchallenge/javascript-starter-kit" class="no-underline">
                     .js
                   </a>
                 </li>
                 <li>
-                  <a href="#" class="no-underline">
+                  <a title="Python" href="http://github.com/monkeymusicchallenge/python-starter-kit" class="no-underline">
                     .py
+                  </a>
+                </li>
+                <li>
+                  <a title="Java" href="http://github.com/monkeymusicchallenge/java-starter-kit" class="no-underline">
+                    .java
                   </a>
                 </li>
               </ul>
@@ -139,12 +144,83 @@
 
         </section>
 
-        <section>
+        <section class="tech">
           <h1>Tech info</h1>
 
-          <p>
-            The short story: you'll control a monkey
-          </p>
+          <div class="text-content">
+            <p>
+              The short story: you'll control a monkey with the goal of collecting music on a tiled map and delivering it to a human. For this you need to write pathfinding algorithms. You'll compete with the other teams' monkeys with this algorithm.
+            </p>
+
+            <h2>At a glance</h2>
+
+            <ul class="list">
+              <li>We have a server who has the map representation.</li>
+              <li>You write the logic for monkey movement.</li>
+              <li>You'll control the monkey by sending <code>POST</code> requests to this server with instructions on how the monkeys should move.</li>
+              <li>You're free to write the logic in any language you'd like, as long as it's capable of sending <code>POST</code> requests (we have starter code for some popular languages <a href="#">in our repo</a>).</li>
+            </ul>
+
+            <h2>API endpoints</h2>
+
+            <p>
+              An API key is required in all requests (attached in the <code>apiKey</code> attribute). Request data should be JSON (<code>application/json</code>).
+            </p>
+
+            <h3>New game</h3>
+            <dl class="horizontal">
+              <dt>Command</dt>
+              <dd><code>new game</code></dd>
+              <dt>Endpoint</dt>
+              <dd><code>/&lt;your-team-name&gt;</code></dd>
+              <dt>Sample</dt>
+              <dd>
+                <pre><code>var data = {
+  command: 'new game',
+  apiKey: 'your-key'
+};
+
+client.post('/your-team-name', data, callback);</code></pre>
+              </dd>
+            </dl>
+
+            <h3>Movement</h3>
+            <dl class="horizontal">
+              <dt>Command</dt>
+              <dd><code>move</code></dd>
+              <dt>Endpoint</dt>
+              <dd><code>/&lt;your-team-name&gt;</code></dd>
+              <dt>Required keys</dt>
+              <dd><code>direction</code> <small class="fade">String being one of <code>up|left|down|left</code></small></dd>
+              <dt>Sample</dt>
+              <dd>
+                <pre><code>var direction = move();   // Actual game logic
+var data = {
+  command: 'move',
+  direction: direction,
+  apiKey: 'your-key'
+};
+
+client.post('/your-team-name', data, callback);</code></pre>
+              </dd>
+            </dl>
+
+            <h3>Server response</h3>
+
+            <p>
+              In your <code>POST</code> requests, you'll receive a response from our server with some data which will come handy for calculating your next step.
+            </p>
+
+            <pre><code>{
+  layout: Array,
+  turns: Number,
+  pickedUpItems: Array
+}</code></pre>
+
+<p>
+  <code>layout</code> is a matrix describing the current state of the map. The elements are strings describing a <strong>tile</strong>, for example "monkey", "song" or "album". <code>pickedUpItems</code> is an array of strings describing, yeah, the items you've picked up.
+  </p>
+          </div>
         </section>
 
       </div>
@@ -159,12 +235,12 @@
         <h1>Contact</h1>
 
         <p>
-          Event details, technicalities, questions ...
+          Event details, technicalities, questions …
         </p>
 
-        <a class="email no-underline" href="mailto:mmc@spotify.com">mmc@spotify.com</a>
+        <p><a class="email no-underline" href="mailto:mmc@spotify.com">mmc@spotify.com</a></p>
 
-        <p>
+        <p class="fade">
           <small>Made by all the love in the world by Poscar, Anton &amp; Johan</small>
         </p>
       </div>

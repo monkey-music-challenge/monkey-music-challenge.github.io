@@ -32,6 +32,12 @@
   @include clearfix;
 }
 
+ol, ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -46,6 +52,7 @@ $light:           #D8FCAD;
 $orange:          #E19924;
 $beige:           #FDFDE6;
 $brown:           #B7A071;
+$yellow:          #FFDE00;
 
 $heading:         'TF2';
 $sans:            Montserrat, sans-serif;
@@ -181,14 +188,52 @@ a {
   }
 }
 
-p {
+p, ul, ol, pre, dl {
   margin: 0 0 $lineheight*2;
 }
 
-ol, ul {
-  list-style: none;
-  padding: 0;
+dd {
   margin: 0;
+}
+
+dl.horizontal {
+  @include clearfix;
+
+  dt, dd {
+    float: left;
+  }
+  dt {
+    clear: left;
+    color: rgba($light, .7);
+    margin-right: 1rem;
+    min-width: 8rem;
+    margin-bottom: .5rem;
+  }
+}
+
+pre, code {
+  font-family: Menlo, Monaco, monospace;
+  color: lighten($light, 10%);
+}
+
+pre {
+  border-radius: 6px;
+  padding: 1rem;
+  background-color: rgba($green, .3);
+}
+
+code {
+  background-color: rgba($green, .25);
+  padding: 2px 4px;
+  border-radius: 3px;
+  font-size: 85%;
+}
+
+pre code {
+  color: inherit;
+  padding: 0;
+  border-radius: 0;
+  background: none;
 }
 
 .container {
@@ -210,6 +255,11 @@ h1 {
 }
 
 h2 {
+  font-family: $sans;
+  font-weight: bold;
+}
+
+h3 {
   font-family: $sans;
   font-weight: bold;
 }
@@ -308,6 +358,17 @@ del {
 .steps {
   text-align: left;
 
+  p {
+    font-size: .8rem;
+    padding-right: 4rem;
+    color: rgba($light, .8);
+    margin-bottom: $lineheight;
+  }
+
+  h2 {
+    margin-bottom: $lineheight / 2;
+  }
+
   > li {
     background-repeat: no-repeat;
     background-position: left top;
@@ -385,10 +446,37 @@ del {
 }
 
 
+.tech {
+
+  h3 {
+    text-align: left;
+  }
+
+  .text-content {
+    p, ul, ol, pre, dl {
+      text-align: left;
+    }
+  }
+
+  dl pre {
+    width: 25rem;
+    font-size: 90%;
+    margin-bottom: 0;
+  }
+}
+
 // Helpers
+
+.list {
+  list-style-type: square;
+}
 
 .content--centered {
   text-align: center;
+}
+
+.content--left {
+  text-align: left;
 }
 
 .fade {
