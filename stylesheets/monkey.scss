@@ -181,6 +181,10 @@ a {
   }
 }
 
+p {
+  margin: 0 0 $lineheight*2;
+}
+
 ol, ul {
   list-style: none;
   padding: 0;
@@ -385,6 +389,10 @@ del {
 
 .content--centered {
   text-align: center;
+}
+
+.fade {
+  opacity: .7;
 }
 
 [class^="icon-"] {
