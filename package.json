@@ -15,12 +15,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/monkeymusicchallenge/monkeymusicchallenge.github.io.git"
+    "url": "https://github.com/monkey-music-challenge/monkeymusicchallenge.github.io.git"
   },
   "author": "Johan Brook <johanb@spotify.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/monkeymusicchallenge/monkeymusicchallenge.github.io/issues"
+    "url": "https://github.com/monkey-music-challenge/monkeymusicchallenge.github.io/issues"
   },
-  "homepage": "https://github.com/monkeymusicchallenge/monkeymusicchallenge.github.io"
+  "homepage": "https://github.com/monkey-music-challenge/monkeymusicchallenge.github.io"
 }
