@@ -65,12 +65,12 @@
             The challenge is split into two separate events. <strong>Wait what?</strong> Yeh, we figured not all of us crank out our best code during hackathons. We believe many of us work better after having a few nights of digesting a problem!
           </p>
           <p>
-            So we'll have two different events. The first event will introduce the challenge and the engine that you will communicate with during the challenge. The second event will be split into two parts, a morning where you get to finish your AI at our office. And an afternoon with <del>presentations</del> AI battles!
+            So we'll have two different events. The first event will introduce the challenge and the engine that you will communicate with during the challenge. The second event will be split into two parts, a morning where you get to finish your AI at our office. And an afternoon with <del>presentations</del> <strong>AI battles</strong>!
           </p>
 
           <p>
             We'd like you to apply in <strong>teams of two</strong>, since programming together is fun.
-            We'll have <strong>20 team spots</strong> available. We go by "first come-first serve" for the signup, <strong>but</strong> those who take the Warmup test will get ahead in line. Read more under "Getting Started" below.
+            We'll have <strong>20 team spots</strong> available. We go by "first come-first serve" for the signup, <strong>but</strong> those who take the <strong>Warmup test</strong> will get ahead in line. Read more under "Getting Started" below.
           </p>
         </div>
 
@@ -96,7 +96,7 @@
           </p>
 
           <p style="margin-bottom: 1em;">
-            <a target="_blank" href="https://docs.google.com/forms/d/1yjUFYkCeQoq-jt18TR36G_BCtXl4O6nSfh0h-cQzdtY/viewform" class="btn"><i class="icon-leaf"></i> Sign up</a>
+            <a target="_blank" href="http://warmup.monkeymusicchallenge.com/signup" class="btn"><i class="icon-leaf"></i> Sign up</a>
             <p>Closes on November 16</p>
           </p>
           <p>
@@ -118,132 +118,39 @@
 
           <ol class="steps">
             <li>
-              <h2><a href="http://warmup.monkeymusicchallenge.com">Take the warmup test</a></h2>
-              <p>
-                The warmup is kind of a single player version of the real version. By doing the warmup well, you'll be prepared for the real deal later! We'll store your team names when (or if?) you finish the warmup.
-              </p>
-            </li>
-
-            <li>
-              <h2><a href="https://github.com/monkeymusicchallenge">Start studying the starter code</a></h2>
-              <p>
-                We’ve created startkits for the most common languages. These starters will help you get up and running writing the actual logic instead of going through the initial hassle of setting up the communication with our server with <code>POST</code> requests.
-              </p>
-
+              <h2>Study the starter code</h2>
               <ul class="languages">
                 <li>
-                  <a title="Javascript" href="http://github.com/monkeymusicchallenge/javascript-starter-kit" class="no-underline">
+                  <a title="Javascript" href="http://github.com/monkey-music-challenge/javascript-starter-kit" class="no-underline">
                     .js
                   </a>
                 </li>
                 <li>
-                  <a title="Python" href="http://github.com/monkeymusicchallenge/python-starter-kit" class="no-underline">
+                  <a title="Python" href="http://github.com/monkey-music-challenge/python-starter-kit" class="no-underline">
                     .py
                   </a>
                 </li>
                 <li>
-                  <a title="Java" href="http://github.com/monkeymusicchallenge/java-starter-kit" class="no-underline">
+                  <a title="Java" href="http://github.com/monkey-music-challenge/java-starter-kit" class="no-underline">
                     .java
                   </a>
                 </li>
               </ul>
             </li>
+            <li>
+              <h2>Take the warmup test</h2>
+              <p>Instructions on how to get going with the warmup is available after you've <a target="_blank" href="http://warmup.monkeymusicchallenge.com/signup">signed up</a>.</p>
+            </li>
           </ol>
 
         </section>
-
-        <section class="tech">
-          <h1>Tech info</h1>
-
-          <div class="text-content">
-            <p>
-              The short story: you'll control a monkey with the goal of collecting music on a tiled map and delivering it to a human. For this you need to write pathfinding algorithms. You'll compete with the other teams' monkeys with this algorithm.
-            </p>
-
-            <h2>At a glance</h2>
-
-            <ul class="list">
-              <li>We have a server who has the map representation.</li>
-              <li>You write the logic for monkey movement.</li>
-              <li>You'll control the monkey by sending <code>POST</code> requests to this server with instructions on how the monkeys should move.</li>
-              <li>You're free to write the logic in any language you'd like, as long as it's capable of sending <code>POST</code> requests (we have starter code for some popular languages <a href="https://github.com/monkeymusicchallenge">in our repos</a>).</li>
-            </ul>
-
-            <h2>API endpoints</h2>
-
-            <p>
-              An API key is required in all requests (attached in the <code>apiKey</code> attribute). Request data should be JSON (<code>application/json</code>).
-            </p>
-
-            <h3>New game</h3>
-            <dl class="horizontal">
-              <dt>Command</dt>
-              <dd><code>new game</code></dd>
-              <dt>Endpoint</dt>
-              <dd><code>/&lt;your-team-name&gt;</code></dd>
-              <dt>Sample</dt>
-              <dd>
-                <pre><code>var data = {
-  command: 'new game',
-  apiKey: 'your-key'
-};
-
-client.post('/awesome-team', data, callback);</code></pre>
-              </dd>
-            </dl>
-
-            <h3>Movement</h3>
-            <dl class="horizontal">
-              <dt>Command</dt>
-              <dd><code>move</code></dd>
-              <dt>Endpoint</dt>
-              <dd><code>/&lt;your-team-name&gt;</code></dd>
-              <dt>Required keys</dt>
-              <dd><code>direction</code> <small class="fade">String being one of <code>up|left|down|left</code></small></dd>
-              <dt>Sample</dt>
-              <dd>
-                <pre><code>var direction = move();   // Actual game logic
-var data = {
-  command: 'move',
-  direction: direction,
-  apiKey: 'your-key'
-};
-
-client.post('/awesome-team', data, callback);</code></pre>
-              </dd>
-            </dl>
-
-            <h3>Server response</h3>
-
-            <p>
-              When doing your <code>POST</code> request, you'll receive a JSON response from our server which will come handy for calculating your next step. The response looks as follows:
-            </p>
-
-            <pre><code>{
-  layout: Array,
-  turns: Number,
-  pickedUpItems: Array
-}</code></pre>
-
-<p>
-  <code>layout</code> is a matrix describing the current state of the map. The elements are strings describing a <strong>tile</strong>, for example "monkey", "song" or "album". <code>pickedUpItems</code> is an array of strings describing, yeah, the items you've picked up.
-  </p>
-
-          <h2>Got questions?</h2>
-
-          <p>
-            Ask in the <a href="https://www.facebook.com/events/1551306571766171/">Facebook event</a> or email us at <a href="mailto:mmc@spotify.com">mmc@spotify.com</a>.
-          </p>
-          </div>
-        </section>
-
       </div>
     </main>
 
     <footer role="contentinfo">
       <div class="container content--centered">
         <p style="margin-bottom: 1em;">
-          <a target="_blank" href="https://docs.google.com/forms/d/1yjUFYkCeQoq-jt18TR36G_BCtXl4O6nSfh0h-cQzdtY/viewform" class="btn"><i class="icon-leaf"></i> Sign up</a>
+          <a target="_blank" href="http://warmup.monkeymusicchallenge.com/signup" class="btn"><i class="icon-leaf"></i> Sign up</a>
           <p>Closes on November 16</p>
         </p>
 
