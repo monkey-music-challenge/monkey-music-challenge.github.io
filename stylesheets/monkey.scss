@@ -176,6 +176,27 @@ html {
     margin-top: $lineheight*2;
   }
 
+  .creators {
+    display: table;
+    width: 100%;
+    text-align: center;
+    margin-bottom: $lineheight*2;
+
+    strong {
+      color: $brown;
+      @include underline(3, $color: $brown, $bg: $beige, $offset: 0);
+    }
+
+    .avatar {
+      width: 100px;
+      border-radius: 100%;
+    }
+
+    a {
+      display: table-cell;
+    }
+  }
+
   .email {
     font-size: to_rem(31);
     color: $orange;
