@@ -170,7 +170,7 @@ html {
   position: relative;
   z-index: 200;
 
-  a {
+  p a {
     color: $orange;
     @include underline($color: $orange, $bg: $beige, $offset: 0);
   }
