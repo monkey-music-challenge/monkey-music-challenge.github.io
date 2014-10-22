@@ -170,7 +170,11 @@ html {
   position: relative;
   z-index: 200;
 
-  p a {
+  .signup {
+    margin-bottom: 1em;
+  }
+
+  p:not(.signup) a {
     color: $orange;
     @include underline($color: $orange, $bg: $beige, $offset: 0);
   }
