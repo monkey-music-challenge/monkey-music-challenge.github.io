@@ -170,6 +170,11 @@ html {
   position: relative;
   z-index: 200;
 
+  a {
+    color: $orange;
+    @include underline($color: $orange, $bg: $beige, $offset: 0);
+  }
+
   h1 {
     color: $brown;
     font-size: to_rem(56);
