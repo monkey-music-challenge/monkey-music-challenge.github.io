@@ -529,6 +529,48 @@ del {
   }
 }
 
+.schedule {
+  width: 50vw;
+  margin: auto;
+
+  @include respond($mobile) {
+    width: 90vw;
+  }
+
+  h1, h2 {
+    text-align: center;
+  }
+
+  img {
+    display: block;
+    margin: to_rem(30) auto;
+  }
+
+  a {
+    border: none;
+  }
+
+  .schedule-list {
+    list-style-type: none;
+    text-align: left;
+
+    li {
+      display: flex;
+      flex-direction: row;
+      margin-bottom: to_rem(20);
+
+      time {
+        font-weight: bold;
+        color: lighten($light, 10%);
+        width: to_rem(140);
+        flex-shrink: 0;
+      }
+    }
+
+  }
+}
+
+
 // Helpers
 
 .list {
